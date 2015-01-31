@@ -23,7 +23,7 @@ else {
     echo "Connection failed: " . mysqli_connect_error();
 }
 
-$sql = "SELECT * FROM  `sports_db`.`STUDENT` where batch = 'bca' ";
+$sql = "SELECT * FROM  `sports_db`.`STUDENT`";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) != 0) {
