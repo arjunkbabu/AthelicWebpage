@@ -111,31 +111,6 @@
         
     </style>
     <script type="text/javascript">
-        /*$(document).ready(function () {
-            var disabled_color = "#f4f4f4";
-            function genderset(){
-                //male-event selector
-         $("#student_gender-0").click(function(){
-             //enable male events
-             $(".event_male").attr("disabled",false);
-             $(".event_male").parent().css({"color":"black"});
-             
-             //disable female
-             $(".event_female").attr("disabled",true);
-             $(".event_female").parent().css({"color":disabled_color});
-                    });
-                //female-event selector
-          $("#student_gender-1").click(function(){
-              //enable female events
-             $(".event_female").attr("disabled",false);
-             $(".event_female").parent().css({"color":"black"});
-               //disable male
-             $(".event_male").attr("disabled",true);
-             $(".event_male").parent().css({"color":disabled_color});
-                    }                            
-         );
-            } 
-        });*/
         
         $(document).ready(function() {
             var x = ($(window).width()) / 2;
@@ -154,15 +129,15 @@
                  $("#event_dropdown .event_male").css("display","none");
              })
              
-             
         });
+        
         
     </script>
 </head>
 
 <body>
     <div class="form_wrap" id="reg_form">
-        <form class="form-horizontal" action = "after_reg.php" method = "post">
+        <form class="form-horizontal" action = "after_reg.php" method = "post" onsubmit=" validate(this);">
             <fieldset>
              <!--header section-->
                <div class="header" class="row">
