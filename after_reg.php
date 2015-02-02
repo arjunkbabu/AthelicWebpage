@@ -36,12 +36,52 @@
    
         $event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
 								`event_id`)
-					VALUES ('$v_roll', $v_ev1), 
-						('$v_roll', $v_ev2),
-						('$v_roll', $v_ev3)";
+					VALUES ('$v_roll', $v_ev1)";
 						
 	if (mysqli_query($conn, $stud_reg_query))	{
 	
+		if( $v_ev1 != "none" )	{
+			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+								`event_id`)
+					VALUES ('$v_roll', $v_ev1)";
+			$reg1 = mysqli_query($conn, $event_reg_query);
+			if($reg1)	{
+				$reg_status = true;			
+			}
+			else	{
+				$reg_status = false;			
+				echo "EV1".mysqli_error($conn);				
+			}			
+		}
+		
+		if( $v_ev2 != "none" )	{
+			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+								`event_id`)
+					VALUES ('$v_roll', $v_ev2)";
+			$reg2 = mysqli_query($conn, $event_reg_query);
+			if($reg2)	{
+				$reg_status = true;			
+			}
+			else	{
+				$reg_status = false;		
+				echo "EV2".mysqli_error($conn);					
+			}
+		}
+		
+		if( $v_ev3 != "none" )	{
+			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+								`event_id`)
+					VALUES ('$v_roll', $v_ev3)";
+			$reg3 = mysqli_query($conn, $event_reg_query);
+			if($reg3)	{
+				$reg_status = true;			
+			}
+			else	{
+				$reg_status = false;
+				echo "EV3".mysqli_error($conn);					
+			}
+		}      
+	/*
 		if (mysqli_query($conn, $event_reg_query))	{
 			echo "<br>Event registration record created successfully";
 			$reg_status = true;
@@ -50,6 +90,7 @@
 			echo "<br>Error: Event registration record".mysqli_error($conn);
 			$reg_status = false;
 		}
+	*/
 	//	$reg_status = true;
 	}
 	else	{
@@ -193,7 +234,7 @@ mysqli_close($conn);
                 	else	{
                 		echo "Oops! We have a problem with your registration";
                 	//	echo "\nPlease contact helpdesk"
-                		echo "ERR: " .mysqli_error($conn);;
+         //       		echo "ERR: " .mysqli_error($conn);;
                 	}
                 		
           
