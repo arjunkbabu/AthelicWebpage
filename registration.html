@@ -17,12 +17,20 @@
    <script>
        function check_form(){
         var email = $("#email").val();
-        var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+        var phone = $("#student_phone").val();
         
+        var ck_phone = /\(?\d{3}\)?([-\/\.])\d{3}\1\d{4}/
+        var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+/*        if (!ck_phone.test(phone)){
+          $("#student_phone").css("border","2px solid #6e1d2c");
+            return false;
+        }
+*/      
         if (!ck_email.test(email)){
           $("#email").css("border","2px solid #6e1d2c");
             return false;
         }
+        
         else{
          return true;
         }
@@ -68,11 +76,17 @@
                         <option value="u_eee">B.Tech EEE</option>
                         <option value="u_me"> B.Tech ME </option>
                         <option value="u_mca">MCA</option>
+                        <option value="u_mcs">M.Sc CS </option>
                         <option value="p_cse">M.Tech CSE</option>
+                        <option value="p_cni">M.Tech Control & Instrumentation</option>
                         <option value="p_cyb">M.Tech Cybersecurity</option>
-                        <option value="p_vlsi">M.Tech VLSI Systems</option>   
-                        <option value="p_wna">M.Tech WNA</option>
                         <option value="p_elr">M.Tech E-Learning</option>
+                        <option value="p_rba">M.Tech Robotics & Automation</option>
+                        <option value="p_pwe">M.Tech Power Energy</option>                      
+                        <option value="p_thf">M.Tech Thermal & Fluids</option>
+                        <option value="p_vlsi">M.Tech VLSI Design</option>   
+                        <option value="p_wna">M.Tech WNA</option>
+
 		    </select>
                     </div>
                 </div>
