@@ -14,11 +14,25 @@
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
    <script src="js/reg_form.min.js"></script>
+   <script>
+       function check_form(){
+        var email = $("#email").val();
+        var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
+        
+        if (!ck_email.test(email)){
+         //put the alert content here!
+            return false;
+        }
+        else{
+         return true;
+        }
+       } 
+        </script>
 </head>
 
 <body>
     <div class="form_wrap" id="reg_form">
-        <form class="form-horizontal" action = "after_reg.php" method = "post" onsubmit=" validate(this);">
+        <form class="form-horizontal" action = "after_reg.php" method = "post" name="form" onsubmit="return check_form();">
             <fieldset>
              <!--header section-->
                <div class="header" class="row">
@@ -85,7 +99,7 @@
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="email">Email</label>
                     <div class="col-md-5">
-                        <input id="email" name="email" type="text" placeholder="it will also be personal :)" class="form-control input-md" required="">
+                        <input id="email" name="email" type="text" placeholder="it will also be personal :)" class="form-control input-md" required="" >
 
                     </div>
                 </div>
