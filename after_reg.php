@@ -10,12 +10,12 @@
 	
 	$reg_status = false;
 	
-	$v_name = $_POST["student_name"]; echo $v_name;
-	$v_roll = $_POST["student_rollno"]; echo $v_roll;
-	$v_batch = $_POST["student_batch"]; echo $v_batch;
-	$v_gender = $_POST["student_gender"]; echo $v_gender;
-	$v_phone = $_POST["student_phone"]; echo $v_phone;
-	$v_email = $_POST["email"]; echo $v_email;
+	$v_name = $_POST["student_name"]; //echo $v_name;
+	$v_roll = $_POST["student_rollno"]; //echo $v_roll;
+	$v_batch = $_POST["student_batch"]; //echo $v_batch;
+	$v_gender = $_POST["student_gender"]; //echo $v_gender;
+	$v_phone = $_POST["student_phone"]; //echo $v_phone;
+	$v_email = $_POST["email"]; //echo $v_email;
 	$v_ev1 = $_POST["event_one"];
 	$v_ev2 = $_POST["event_two"];
 	$v_ev3 = $_POST["event_three"];
@@ -38,7 +38,9 @@
 								`event_id`)
 					VALUES ('$v_roll', $v_ev1)";
 						
-	if (mysqli_query($conn, $stud_reg_query))	{
+	$stud_reg = mysqli_query($conn, $stud_reg_query);
+	//DELETE FROM  `STUDENT` WHERE  `roll` LIKE  "AM.AR.U313BCA0052"
+	if ($stud_reg)	{
 	
 		if( $v_ev1 != "none" )	{
 			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
@@ -50,7 +52,7 @@
 			}
 			else	{
 				$reg_status = false;			
-				echo "EV1".mysqli_error($conn);				
+//				echo "EV1".mysqli_error($conn);				
 			}			
 		}
 		
@@ -64,7 +66,7 @@
 			}
 			else	{
 				$reg_status = false;		
-				echo "EV2".mysqli_error($conn);					
+//				echo "EV2".mysqli_error($conn);					
 			}
 		}
 		
@@ -78,7 +80,7 @@
 			}
 			else	{
 				$reg_status = false;
-				echo "EV3".mysqli_error($conn);					
+//				echo "EV3".mysqli_error($conn);					
 			}
 		}      
 	/*
@@ -95,7 +97,7 @@
 	}
 	else	{
 		$reg_status = false;
-		echo mysqli_error($conn);
+//		echo mysqli_error($conn);
 	}
 /*
 	if (mysqli_query($conn, $event_reg_query))	{
@@ -104,7 +106,12 @@
 	else	{
 		echo "<br>Error: Event registration record".mysqli_error($conn);
 	}
-*/		
+*/	
+	if(!$reg_status)	{
+		$del_query = "DELETE FROM  `sports_db`.`STUDENT` WHERE  `roll` LIKE  '$v_roll' ";
+		mysqli_query($conn, $del_query);
+	}
+		
 mysqli_close($conn);
 ?>
 
@@ -233,6 +240,7 @@ mysqli_close($conn);
                 	}
                 	else	{
                 		echo "Oops! We have a problem with your registration";
+                		echo "<BR> <P class='alert alert-danger'>Try resubmitting!</p>";
                 	//	echo "\nPlease contact helpdesk"
          //       		echo "ERR: " .mysqli_error($conn);;
                 	}
