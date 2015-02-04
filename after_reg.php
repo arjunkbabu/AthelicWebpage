@@ -7,7 +7,12 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "password";
-	
+
+/*
+	$servername = "localhost";
+	$username = "athletics";
+	$password = "amrita_108";
+*/	
 	$reg_status = false;
 	
 	$v_name = $_POST["student_name"]; //echo $v_name;
@@ -28,13 +33,13 @@
 	else
 	    echo "Database connection failed!";
 	  */
-	$stud_reg_query = "INSERT INTO `sports_db`.`STUDENT` 
+	$stud_reg_query = "INSERT INTO `athletics`.`STUDENT` 
 			(`roll`, `name`, `batch`, `gender`, `phone`, `email`) 
 		VALUES ('$v_roll', '$v_name', '$v_batch', '$v_gender', 
 			'$v_phone', '$v_email')";
                             
    
-        $event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+        $event_reg_query = "INSERT INTO `athletics`.`REGISTRATION` (`roll` ,
 								`event_id`)
 					VALUES ('$v_roll', $v_ev1)";
 						
@@ -43,7 +48,7 @@
 	if ($stud_reg)	{
 	
 		if( $v_ev1 != "none" )	{
-			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+			$event_reg_query = "INSERT INTO `athletics`.`REGISTRATION` (`roll` ,
 								`event_id`)
 					VALUES ('$v_roll', $v_ev1)";
 			$reg1 = mysqli_query($conn, $event_reg_query);
@@ -57,7 +62,7 @@
 		}
 		
 		if( $v_ev2 != "none" )	{
-			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+			$event_reg_query = "INSERT INTO `athletics`.`REGISTRATION` (`roll` ,
 								`event_id`)
 					VALUES ('$v_roll', $v_ev2)";
 			$reg2 = mysqli_query($conn, $event_reg_query);
@@ -71,7 +76,7 @@
 		}
 		
 		if( $v_ev3 != "none" )	{
-			$event_reg_query = "INSERT INTO `sports_db`.`REGISTRATION` (`roll` ,
+			$event_reg_query = "INSERT INTO `athletics`.`REGISTRATION` (`roll` ,
 								`event_id`)
 					VALUES ('$v_roll', $v_ev3)";
 			$reg3 = mysqli_query($conn, $event_reg_query);
@@ -108,7 +113,7 @@
 	}
 */	
 	if(!$reg_status)	{
-		$del_query = "DELETE FROM  `sports_db`.`STUDENT` WHERE  `roll` LIKE  '$v_roll' ";
+		$del_query = "DELETE FROM  `athletics`.`STUDENT` WHERE  `roll` LIKE  '$v_roll' ";
 		mysqli_query($conn, $del_query);
 	}
 		
@@ -116,17 +121,30 @@ mysqli_close($conn);
 ?>
 
     <title>Amrita sports 2015 registration</title>
-    <!-- Latest compiled and minified CSS -->
+<!--
+    <!-- Latest compiled and minified CSS 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600,400' rel='stylesheet' type='text/css'>
 
-    <!-- Optional theme -->
+    <!-- Optional theme 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-    <!-- Latest compiled and minified JavaScript -->
+    <!-- Latest compiled and minified JavaScript
     <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <style>
+ -->   
+<link rel="stylesheet" href="js/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="js/bootstrap-theme.min.css">
+  
+     <!-- Custom styles -->
+     <link rel="stylesheet" href="css/reg_form.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+   <script src="js/reg_form.min.js"></script>
+<style>
         body{
         background: #6e1d2c;
         -webkit-background-size: cover;
@@ -138,7 +156,7 @@ mysqli_close($conn);
          background: rgba(251, 255, 255, 1.9);
         }
         .form_wrap {
-            margin: 0 auto;
+            margin: 0 auto; No Privileges 
             width: 1024px;
              box-shadow: 7px -1px 69px -5px rgba(0,0,0,0.75);;
         }
@@ -185,6 +203,15 @@ mysqli_close($conn);
         box-shadow: 0 1px 1px #acd200 inset, 0 1px 4px #d5de26;
         border: 1px solid #acd200;
         }
+
+       .error_message{
+        margin-left:100px;
+        font-size:18px;
+	}
+
+        .success_bar{
+      
+        }
     </style>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -212,7 +239,7 @@ mysqli_close($conn);
          );
             } 
                 var x = ($(window).width()) / 2;
-                $("#form_wrap").css("width",x);
+                $("#form_wrap,").css("width",x);
                 genderset();
         });
     </script>
@@ -231,24 +258,28 @@ mysqli_close($conn);
                 <!-- Registration form
                  -->
                  <div id="legend">
-                <h3 class="text-center" class="subhead">
-                
+                <h3 class="text-center" class="subhead"></h3>
+                <div class="container">
+                   <div class ="row">
                 <?PHP
 //                	$reg_status = true;
                 	if($reg_status == true)	{
-                		echo "Your registration is successful!";
+                		echo "<br><div class ='col-md-9 alert alert-success success_bar text-center error_message'>Your registration is successful!</div>";
                 	}
                 	else	{
-                		echo "Oops! We have a problem with your registration";
-                		echo "<BR> <P class='alert alert-danger'>Try resubmitting!</p>";
+                		echo "<div class='col-md-9 alert alert-danger error_message text-center'>Oops! We have a problem with your registration.</br>Maybe You Have Duplicate Entries</br>Try resubmitting the form with correct details :)</div>";
+
+                		//echo "<br>Try resubmitting!";
                 	//	echo "\nPlease contact helpdesk"
          //       		echo "ERR: " .mysqli_error($conn);;
                 	}
                 		
           
                 ?>
-                </h3>
+               </div>
                 </div>
+                </div>
+
                 <!--Name -->
                 <!-- hammerthrow stuff -->
             </fieldset>
