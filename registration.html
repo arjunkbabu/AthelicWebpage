@@ -19,13 +19,14 @@
         var email = $("#email").val();
         var phone = $("#student_phone").val();
         
-        var ck_phone = /\(?\d{3}\)?([-\/\.])\d{3}\1\d{4}/
+        var ck_phone = /^[0]?[789]\d{9}$/
         var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i
-/*        if (!ck_phone.test(phone)){
+           
+        if (!ck_phone.test(phone)){
           $("#student_phone").css("border","2px solid #6e1d2c");
             return false;
         }
-*/      
+     
         if (!ck_email.test(email)){
           $("#email").css("border","2px solid #6e1d2c");
             return false;
