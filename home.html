@@ -23,6 +23,9 @@
             .box_dept p{
              display: none;
             }
+            .box_dept{
+            cursor: pointer;
+            }
         </style>
         <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -224,6 +227,15 @@
       </footer>
       <script>
            $(document).ready(function(){
+               
+                $('.box_dept').hover(
+         function () {
+           $(this).css({"background-color":"#acd200"});
+         }, 
+         function () {
+           $(this).css({"background-color":"#6e1d2c"});
+         }
+     );
                $(".box_dept").on("hover",function(){
                 $(this).css("background","#acd200");
                });
