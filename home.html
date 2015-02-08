@@ -20,12 +20,20 @@
             #event_table tr td{
                text-transform: capitalize;
             }
+            .box_dept p{
+             display: none;
+            }
+            .box_dept{
+            cursor: pointer;
+            }
         </style>
+        <script src="js/jquery-1.11.2.min.js"></script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	<script>
 		function cricAlert()	{
 			alert("Potru Sarath (S8 ECE)\nMob: 8129603543 ");
 		}
+        
 	</script>
     </head>
     <body>
@@ -172,20 +180,25 @@
                 Departments 
              </h2>
              <div class="row dept">
-                 <div class="col-md-2 ">
+                 <div class="col-md-2 box_dept">
                      <h3 class="text-center">CSE</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis commodi ullam iste aliquam eius mollitia velit eum id odio a, eos architecto quam dignissimos voluptates suscipit enim iusto ipsam, veritatis.</p>
                  </div>
-                 <div class="col-md-2">
+                 <div class="col-md-2 box_dept">
                      <h3 class="text-center">CSA</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate culpa minima, sit? Maxime sapiente aut voluptatum dolor fugit quis aspernatur deleniti necessitatibus, itaque vitae tenetur quam dignissimos. Nobis, asperiores, voluptatum.</p>
                  </div>
-                 <div class="col-md-2">
+                 <div class="col-md-2 box_dept">
                      <h3 class="text-center">MECH</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis quas harum, quam, corrupti delectus laboriosam, recusandae esse, commodi similique rerum excepturi. A minima quas, impedit alias velit recusandae doloribus obcaecati!</p>
                  </div>
-                 <div class="col-md-2">
+                 <div class="col-md-2 box_dept">
                      <h3 class="text-center">ECE</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt omnis quisquam, velit animi quidem minima vitae id et possimus, perferendis, placeat nobis suscipit. Enim aspernatur laboriosam nemo fugiat, tenetur ipsa.</p>
                  </div>
-                 <div class="col-md-2">
+                 <div class="col-md-2 box_dept">
                      <h3 class="text-center">EEE</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi saepe atque quo perspiciatis fugiat est et ea necessitatibus blanditiis eveniet, libero facilis dolor iusto assumenda inventore unde eligendi soluta autem.</p>
                  </div>
              </div>
          </div>
@@ -212,12 +225,30 @@
         <p class="text-center">&copy; <a href = "http://www.amrita.edu" target = "_blank">Amrita Vishwa Vidyapeetham</a></p>
          </div>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script>
+           $(document).ready(function(){
+               
+                $('.box_dept').hover(
+         function () {
+           $(this).css({"background-color":"#acd200"});
+         }, 
+         function () {
+           $(this).css({"background-color":"#6e1d2c"});
+         }
+     );
+               $(".box_dept").on("hover",function(){
+                $(this).css("background","#acd200");
+               });
+           $(".box_dept").on("click",function(){
+          $(this).find("p").slideToggle();
+        });  
+           });
+               
+</script>
+    </div> <!-- /container --> 
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-
-        <script src="js/main.js"></script>
 
     </body>
 </html>
