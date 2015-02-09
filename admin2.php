@@ -20,7 +20,11 @@ if (!$conn) {
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="js/bootstrap-theme.min.css">
-  
+  	<style>
+  		h2	{
+  			text-align: center;
+  		}
+  	</style>
      <!-- Custom styles -->
      <link rel="stylesheet" href="css/reg_form.min.css">
     <!-- Latest compiled and minified JavaScript -->
@@ -217,7 +221,7 @@ $result = mysqli_query($conn, $sql_m101);
 				}	
 			?>
 			</table>		
-			<table class="table table-striped table-bordered table-hover">
+<table class="table table-striped table-bordered table-hover">
 
 	<h2> 400 m MALE </h2>
  <tr>
@@ -282,6 +286,724 @@ $result = mysqli_query($conn, $sql_m101);
 				}	
 			?>
 			</table>
+<table class="table table-striped table-bordered table-hover">
+
+	<h2> 800 m MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 104) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>	
+			
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> 800 m FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 204) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+<table class="table table-striped table-bordered table-hover">
+
+	<h2> 1500 m MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 105) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>	
+			
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> 1500 m FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 205) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+			
+<table class="table table-striped table-bordered table-hover">
+
+	<h2> 5000 m MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 106) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>	
+			
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> 3000 m FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 208) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+<table class="table table-striped table-bordered table-hover">
+
+	<h2> 10000 m MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 107) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>	
+			
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> 110 m Hurdles MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 111) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> 110 m Hurdles FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 213) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> 400 m Hurdles MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 112) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Long Jump MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 131) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Long Jump FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 231) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+		<!-- -->
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> High Jump MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 132) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Triple Jump MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 133) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Shot Put MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 141) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Shot Put FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 241) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+<!-- -->	
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Discuss Throw MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 142) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Discuss Throw FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 242) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+<!-- -->		
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Javelin Throw MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 143) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Javlin Throw FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 243) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+<!-- -->
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Hammer Throw MALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 144) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+	
+	<table class="table table-striped table-bordered table-hover">
+
+	<h2> Hammer Throw FEMALE </h2>
+ <tr>
+ 			<th> S.No </th>
+                       <th>Name</th>
+                       <th>Roll no</th>
+                       <th>Events</th> 
+                    </tr>
+			<?php
+			$sql_m101 = "SELECT  `STUDENT`.`name` ,  `STUDENT`.`roll` ,  `STUDENT`.`batch` 
+FROM  `STUDENT` WHERE  `STUDENT`.`roll` IN ( SELECT  `REGISTRATION`.`roll` FROM  `REGISTRATION` 
+WHERE  `event_id` = 244) order by `STUDENT`.`batch`";
+
+$result = mysqli_query($conn, $sql_m101);
+
+			$sno = 1;
+				if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				 //   echo "<br> 100 m MALE <br>";
+				    while($row = mysqli_fetch_assoc($result)) {
+				    	echo "<tr>";
+				    	echo "<td>" . $sno++. "</td>"."<td>" . $row["name"] . "</td>" . "<td>". $row["roll"] . "</td>" . "<td>". $row["batch"] . "</td>";
+				    	echo "</tr>";
+				    
+				    //    echo "Name: " . $row["name"]. " - Name: " . $row["roll"]. " " . $row["batch"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}	
+			?>
+			</table>
+<!-- -->
                 </div>
                 </div>
             </div>
