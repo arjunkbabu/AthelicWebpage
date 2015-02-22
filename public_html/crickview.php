@@ -11,11 +11,18 @@ $password = "password";
 $dbname = "sports_db";
 */
 echo "hello";
+/*
 	$servername = "localhost";
 	$username = "athletics";
 	$password = "amrita_108";
 	$dbname = "athletics";
+*/
+	$servername = "localhost";
+	$username = "root";
+	$password = "password";
+	$dbname = "sports_db";
 
+	
 // Create connection
 //$conn = mysqli_connect($servername, $username, $password, $dbname);
 $conn = mysqli_connect($servername, $username, $password, $dbname);

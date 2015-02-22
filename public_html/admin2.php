@@ -1,16 +1,17 @@
 <!doctype html>
 <?php
-/*
+
 $servername = "localhost";
 $username = "root";
 $password = "password";
 $dbname = "sports_db";
-*/
 
+/*
 	$servername = "localhost";
 	$username = "athletics";
 	$password = "amrita_108";
 	$dbname = "athletics";
+*/
 
 // Create connection
 //$conn = mysqli_connect($servername, $username, $password, $dbname);

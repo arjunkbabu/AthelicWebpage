@@ -3,15 +3,16 @@
 <head>
 
 <?PHP
-/*
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "password";
-*/
+
+/*
 	$servername = "localhost";
 	$username = "athletics";
 	$password = "amrita_108";
-	
+*/	
 	$reg_status = false;
 	
 	$v_name = $_POST["student_name"]; //echo $v_name;
