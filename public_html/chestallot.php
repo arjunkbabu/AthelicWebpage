@@ -6,11 +6,11 @@ $dbname = "sports_db";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
+
 // Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
 
 $fetchquery = "SELECT  `roll` ,  `batch` FROM  `STUDENT` WHERE 1 ";
 //$chestupquery = "UPDATE  `STUDENT` SET  `CHEST` =776 WHERE  `roll` LIKE  \"am.en.u4bca12546\"";
@@ -30,7 +30,10 @@ if (mysqli_num_rows($result) > 0) {
 		
 		$rr = $row["roll"];
 		
-		if( $row["batch"] == "u_cse" )	{
+		if( $row["batch"] == "u_cse" 
+			or $row["batch"] == "p_cyb"
+			or $row["batch"] == "p_elr"
+			or $row["batch"] == "p_wna")	{
 			if( $cse == 199 )	{
 				$cse = 1100;
 			}
@@ -39,7 +42,10 @@ if (mysqli_num_rows($result) > 0) {
 			}
 			$val = $cse;
 		}
-		else if( $row["batch"] == "u_csa" )	{
+		else if( $row["batch"] == "u_bca" or $row["batch"] == "u_bcs"
+			or $row["batch"] == "u_mca"
+			or $row["batch"] == "u_mcs" )	{
+			//bca, bsc, mca, msc
 			if( $csa == 299 )	{
 				$csa = 2200;
 			}
@@ -48,7 +54,9 @@ if (mysqli_num_rows($result) > 0) {
 			}
 			$val = $csa;
 		}
-		else if( $row["batch"] == "u_me" )	{
+		else if( $row["batch"] == "u_me"
+			or $row["batch"] == "p_rba"
+			or $row["batch"] == "p_thf" )	{
 			if( $me == 399 )	{
 				$me = 3300;
 			}
@@ -57,7 +65,8 @@ if (mysqli_num_rows($result) > 0) {
 			}
 			$val = $me;
 		}
-		else if( $row["batch"] == "u_ece" )	{
+		else if( $row["batch"] == "u_ece"
+			or $row["batch"] == "p_vlsi" )	{
 			if( $ece == 499 )	{
 				$ece = 4400;
 			}
@@ -66,7 +75,9 @@ if (mysqli_num_rows($result) > 0) {
 			}
 			$val = $ece;
 		}
-		else if( $row["batch"] == "u_eee" )	{
+		else if( $row["batch"] == "u_eee"
+			or $row["batch"] == "p_cni"
+			or $row["batch"] == "p_pwe" )	{
 			if( $eee == 599 )	{
 				$eee = 5500;
 			}
