@@ -1,0 +1,32 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<form method = "post" action = "add_hscore_100_handler:.php">
+			<table>
+				<tr>
+					<th> POS </th>
+					<th> Chest Number </th>
+					<th> TIME (HH.MM.SS) </th>
+				</tr>
+				<tr>
+					<td> Pos 1 </td>
+					<td> <input type="text" name = "chest_h"> </td>
+					<td> <input type="text" name = "time_h"> </td>
+				</tr>
+				<tr>
+					<td> Pos 2 </td>
+					<td> <input type="text" name = "chest_h"> </td>
+					<td> <input type="text" name = "time_h"> </td>
+				</tr>		
+				<tr>
+					<td> Pos 3 </td>
+					<td> <input type="text" name = "chest_h"> </td>
+					<td> <input type="text" name = "time_h"> </td>
+				</tr>
+			</table>
+			
+			<input type =  "submit">
+		</form>
+	</body>
+</html>
