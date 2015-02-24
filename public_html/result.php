@@ -1,6 +1,6 @@
 <?php
 echo "hello";
-$cot=mysqli_connect("localhost","athletics","amrita_108","athletics");
+$cot=mysqli_connect("localhost","root","password","sports_db");
 
 $query1="SELECT `SCORE`
 FROM `deptscore`
@@ -92,7 +92,7 @@ $scr4=$row4['SCORE'];
         </script>
 	
  
-    <script type='text/javascript' src='http://www.google.com/jsapi'></script>
+    <script type='text/javascript' src='js/jsapi.js'></script>
    
 	<script type="text/javascript">
     
