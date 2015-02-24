@@ -10,30 +10,40 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-?>
 
-<form>
-<table>
-	<th> POS </th>
-	<th> Chest Number </th>
-	<th> TIME (HH.MM.SS) </th>
+$c1 = $_POST["pos1_chest"];
+$t1 = $_POST["pos1_time"];
 
-	<td> Pos 1 </td>
-	<td> <input type 
-</table>
-</form>
+//echo "<br> ".$c1." ".$t1."<br>";
 
-<?php
-/*
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
+$c2 = $_POST["pos2_chest"];
+$t2 = $_POST["pos2_time"];
 
-if (mysqli_query($conn, $sql)) {
+$c3 = $_POST["pos3_chest"];
+$t3 = $_POST["pos3_time"];
+
+
+$pos1_updatequery = "UPDATE  `Heats_100` SET  `time` = \"$t1\" WHERE  `chest` = $c1 ";
+$pos2_updatequery = "UPDATE  `Heats_100` SET  `time` = \"$t2\" WHERE  `chest` = $c2 ";
+$pos3_updatequery = "UPDATE  `Heats_100` SET  `time` = \"$t3\" WHERE  `chest` = $c3 ";
+
+if (mysqli_query($conn, $pos1_updatequery)) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-*/
+
+if (mysqli_query($conn, $pos2_updatequery)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+if (mysqli_query($conn, $pos3_updatequery)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 mysqli_close($conn);
 
 ?> 
