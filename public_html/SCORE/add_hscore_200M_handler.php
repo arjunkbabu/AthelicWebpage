@@ -23,9 +23,9 @@ $c3 = $_POST["pos3_chest"];
 $t3 = $_POST["pos3_time"];
 
 
-$pos1_updatequery = "UPDATE  `Heats_100` SET  `time` = \"$t1\" WHERE  `chest` = $c1 ";
-$pos2_updatequery = "UPDATE  `Heats_100` SET  `time` = \"$t2\" WHERE  `chest` = $c2 ";
-$pos3_updatequery = "UPDATE  `Heats_100` SET  `time` = \"$t3\" WHERE  `chest` = $c3 ";
+$pos1_updatequery = "UPDATE  `Heats_200M` SET  `time` = \"$t1\" WHERE  `chest` = $c1 ";
+$pos2_updatequery = "UPDATE  `Heats_200M` SET  `time` = \"$t2\" WHERE  `chest` = $c2 ";
+$pos3_updatequery = "UPDATE  `Heats_200M` SET  `time` = \"$t3\" WHERE  `chest` = $c3 ";
 
 if (mysqli_query($conn, $pos1_updatequery)) {
     echo "New record created successfully";
