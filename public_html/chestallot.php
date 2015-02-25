@@ -17,7 +17,7 @@ $fetchquery = "SELECT  `roll` ,  `batch` FROM  `STUDENT` WHERE 1 ";
 
 $result = mysqli_query($conn, $fetchquery);
 
-$cse = 100; $csa = 200; $me = 300; $ece = 400; $eee = 500;
+$cse = 185; $csa = 241; $me = 368; $ece = 499; $eee = 563;
 
 $val = 0;
 
@@ -26,6 +26,7 @@ $rr = 0;
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
+    	if( $row["chest"] == 0 )	{
 		echo "<br> id: " . $row["roll"]. " - Name: " . $row["batch"];
 		
 		$rr = $row["roll"];
@@ -91,6 +92,7 @@ if (mysqli_num_rows($result) > 0) {
 		$res = mysqli_query($conn, $chestupquery);
 		
 		echo "<br> HI ".$res." ".$val." ".$rr;
+	}
     }
     
 } else {
