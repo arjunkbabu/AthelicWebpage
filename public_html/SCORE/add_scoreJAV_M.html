@@ -23,7 +23,7 @@
      }
     </style>
     <div class="form_wrap" id="reg_form">
-        <form class="form-horizontal" action = "add_hscore_400M_handler.php" method = "post" name="form" onsubmit="return check_form();">
+        <form class="form-horizontal" action = "add_hscore_100F_handler.php" method = "post" name="form" onsubmit="return check_form();">
             <fieldset>
              <!--header section-->
                <div class="header" class="row">
@@ -34,38 +34,50 @@
                 <!-- Registration form
                  -->
                  <div id="legend">
-                <h3 class="text-center" class="subhead">400 m MALE HEATS</h3>
+                <h3 class="text-center" class="subhead"> SHOT PUT (MALE) </h3>
                 </div>
                 <!--Name-->
                 <div class="row" id="score">
                 <div class="col-md-12">
                 <div class="form-group">
+                   <form method = "post" action = "add_hscore_100M_handler.php">
 			<table class="table">
 	<body>
-
+<!--		<form method = "post" action = "add_hscore_100M_handler.php"> -->
 				<tr>
 					<th> POS </th>
 					<th> Chest Number </th>
-					<th> TIME (HH.MM.SS) </th>
+					<th> Distance </th>
 				</tr>
 				<tr>
 					<td class="success ">Pos 1 </td>
 					<td> <input type="text" name = "pos1_chest" class="form-control"> </td>
-					<td> <input type="text" name = "pos1_time" class="form-control"> </td>
+					<td> <input type="text" name = "pos1_score" class="form-control"> </td>
 				</tr>
 				<tr>
 					<td class="active"> Pos 2 </td>
 					<td> <input type="text" name = "pos2_chest" class="form-control"> </td>
-					<td> <input type="text" name = "pos2_time" class="form-control"> </td>
+					<td> <input type="text" name = "pos2_score" class="form-control"> </td>
 				</tr>		
 				<tr>
 					<td class="warning"> Pos 3 </td>
 					<td> <input type="text" name = "pos3_chest" class="form-control"> </td>
-					<td> <input type="text" name = "pos3_time" class="form-control"> </td>
+					<td> <input type="text" name = "pos3_score" class="form-control"> </td>
 				</tr>				
+				<tr>
+					<td class="warning"> Pos 4 </td>
+					<td> <input type="text" name = "pos4_chest" class="form-control"> </td>
+					<td> <input type="text" name = "pos4_score" class="form-control"> </td>
+				</tr>
+				<tr>
+					<td class="warning"> Pos 5 </td>
+					<td> <input type="text" name = "pos5_chest" class="form-control"> </td>
+					<td> <input type="text" name = "pos5_score" class="form-control"> </td>
+				</tr>
 			</table>
 			
 			<input type =  "submit" class="pull-right btn btn-default ">
+<!--		</form> -->
                 </div>
 
                 
