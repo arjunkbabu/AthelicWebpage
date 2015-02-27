@@ -2,9 +2,16 @@
 
 <<<<<<< HEAD
 <?php
+/*
 	$servername = "localhost";
 	$username = "athletics";
 	$password = "amrita_108";
+	$dbname = "athletics";
+*/
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "password";
 	$dbname = "athletics";
 
 	// Create connection
@@ -15,10 +22,9 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$sql = "SELECT `result_800M`.`chest` , `score` , `roll` , `name` , `batch`
-	FROM `result_800M` , `STUDENT` WHERE `result_800M`.`chest` = `STUDENT`.`CHEST`
-	ORDER BY `result_800M`.`score` DESC
-	LIMIT 0 , 5";
+	$sql = "SELECT  `result_5000M`.`chest` ,  `result_5000M`.`time` ,  `roll` ,  `name` ,  `batch` 
+FROM  `result_5000M` ,  `STUDENT` WHERE  `result_5000M`.`chest` =  `STUDENT`.`CHEST` AND  `result_5000M`.`time` !=0
+ORDER BY  `result_5000M`.`time` ASC LIMIT 0 , 5";
 
 	$result = mysqli_query($conn, $sql);
 ?>
@@ -57,7 +63,7 @@
  
    
                  <div id="legend">
-                <h3 class="text-center" class="subhead"> 800 metre (MALE) </h3>
+                <h3 class="text-center" class="subhead"> 5000 metre (MALE) </h3>
                 </div>
                 <!--Name-->
                 <div class="row" id="score">
@@ -81,7 +87,7 @@
 				// output data of each row
 				while($row = mysqli_fetch_assoc($result)) {
 					echo "<tr>";
-					echo "<td>".$count++."</td>"." "."<td>".$row['chest']."</td>"." "."<td>".$row['name']."</td>"." "."<td>".$row['roll']."</td>"." "."<td>".$row['score']."</td>"." "."<td>".$row['batch']."</td>";
+					echo "<td>".$count++."</td>"." "."<td>".$row['chest']."</td>"." "."<td>".$row['name']."</td>"." "."<td>".$row['roll']."</td>"." "."<td>".$row['time']."</td>"." "."<td>".$row['batch']."</td>";
 					echo "</tr>";
 					//echo "id: " . $row["chest"]. " - ".$row["score"]." " . $row["roll"]." " . $row["name"]." " . $row["batch"]. "<br>";
 				}

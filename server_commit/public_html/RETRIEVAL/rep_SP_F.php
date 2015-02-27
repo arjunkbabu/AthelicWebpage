@@ -2,9 +2,16 @@
 
 <<<<<<< HEAD
 <?php
+/*
 	$servername = "localhost";
 	$username = "athletics";
 	$password = "amrita_108";
+	$dbname = "athletics";
+*/
+
+	$servername = "localhost";
+	$username = "root";
+	$password = "password";
 	$dbname = "athletics";
 
 	// Create connection
@@ -15,9 +22,8 @@
 		die("Connection failed: " . mysqli_connect_error());
 	}
 
-	$sql = "SELECT `result_sp_f`.`chest` , `score` , `roll` , `name` , `batch`
-FROM `result_sp_f` , `STUDENT` WHERE `result_sp_f`.`chest` = `STUDENT`.`CHEST`
-ORDER BY `result_sp_f`.`score` DESC
+	$sql = "SELECT `result_sp_f`.`chest` , `result_sp_f`.`score` , `roll` , `name` , `batch`
+FROM `result_sp_f` , `STUDENT` WHERE `result_sp_f`.`chest` = `STUDENT`.`CHEST` AND `result_sp_f`.`score` != 0 ORDER BY `result_sp_f`.`score` DESC
 LIMIT 0 , 5";
 
 	$result = mysqli_query($conn, $sql);
